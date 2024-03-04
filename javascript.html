@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #405de6;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #405de6;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2f4ed8;
+}
+
+p {
+  margin-top: 20px;
+}
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.img{
+    height: 400px;
+    width: 300px;
+    background-color: black;
+    border-radius: 24px;
+}
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.carousel-inner {
+  display: flex;
+}
+
+img {
+  width: 100%;
+  display: none;
+}
+
+img:first-child {
+  display: block;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+</style>
+<body>
+    <div class="box" style="display: flex;">
+        <div class="container">
+            <h1>Instagram</h1>
+            <form action="#">
+              <input type="text" placeholder="Username">
+              <input type="password" placeholder="Password">
+              <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+          </div>
+          <div class="img">
+            <div class="carousel">
+                <div class="carousel-inner">
+                  <img src="./screenshot1.png" alt="Image 1">
+                  <img src="./screenshot2.png" alt="Image 2">
+                  <img src="./screenshot4.png" alt="Image 3">
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+              </div>
+          </div>
+    </div>
+<script>
+    let slideIndex = 0;
+showSlide(slideIndex);
+
+function moveSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function showSlide(n) {
+  const slides = document.querySelectorAll('.carousel-inner img');
+  if (n >= slides.length) {slideIndex = 0}    
+  if (n < 0) {slideIndex = slides.length - 1}
+  for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  slides[slideIndex].style.display = "block";  
+}
+
+</script>
+</body>
+</html>

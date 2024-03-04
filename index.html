@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .border-round {
+            border-radius: 10px;
+        }
+        .shadow {
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container border-round shadow p-4">
+        <h1 class="my-4 text-center bg-dark text-white">EVENT REGISTRATION FORM</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" class="form-control" id="company" placeholder="Enter your company name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">+1</div>
+                    </div>
+                    <input type="text" class="form-control" id="areaCode" placeholder="Area code">
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="Phone number">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select class="form-control" id="subject">
+                    <option value="">Choose...</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="existingCustomer">
+                <label class="form-check-label" for="existingCustomer">Are you an existing customer?</label>
+            </div>
+            <button type="submit" class="btn btn-primary">REGISTER</button>
+        </form>
+    </div>
+</body>
+</html>
